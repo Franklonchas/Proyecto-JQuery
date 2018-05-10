@@ -27,11 +27,14 @@ function mostrarPeliculas() {
     }
 }
 
+function noCargada(lol){
+    lol.src = "./load.jpg"
+}
+
 function addPelicula(ListaPeliculas) {
     for (let i = 0; i < ListaPeliculas.Search.length; i++) {
         $('#contenido').append('<div class="card col-lg-3 col-md-4 col-sm-6 col-xs-12 col-12" style="height: 350px; display: inline-flex;">\n' +
-            '  <img class="card-img-top" style="height: 300px; width: 100%;" src="' + ListaPeliculas.Search[i].Poster
-            + ' ">\n' +
+            '  <img class="card-img-top" style="height: 300px; width: 100%;" src="' + ListaPeliculas.Search[i].Poster + '" onerror="noCargada(this)">\n' +
             '  <div class="card-body">\n' +
             '    <a class="card-title">' + ListaPeliculas.Search[i].Title + '</a>\n' +
             '    <p class="card-text">Año: ' + ListaPeliculas.Search[i].Year + '</p>\n' +

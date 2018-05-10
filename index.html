@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
 
+    <meta charset="UTF-8">
+    <meta name="description" content="Web API DMBI buscador online">
+    <meta name="author" content="Francisco Javier Sánchez de la Torre">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script
@@ -19,21 +23,32 @@
 
     <style>
         img{
-            max-height: 150px;
-            max-width: 150px;
+            max-height: 250px;
+            max-width: 300px;
         }
 
     </style>
 
 </head>
 <body>
-<input type="text" id="pelicula">
-<input type="button" id="buscar" value="Buscar" onclick="bucarPelicula()">
-<input type="button" value="lol" onclick="mostrarPeliculas()">
-<div id="contenido">
 
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">¿Que Peli veo Hoy?</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-</div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" id="pelicula" type="search" placeholder="Pon tu peli aquí" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" id="buscar" type="submit" onclick="bucarPelicula()">Search</button>
+        </form>
+    </div>
+</nav>
+<div id="contenido"></div>
 </body>
 <script src="scripts.js"></script>
 </html>
